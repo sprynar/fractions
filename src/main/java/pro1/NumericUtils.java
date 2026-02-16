@@ -4,7 +4,7 @@ public class NumericUtils {
     public static long gcd(long a, long b) {
         while (b != 0) {
             long tmp = a % b;
-            System.out.println(a + ";" + b);
+            System.out.println("GCD: " + a + ";" + b);
             a = b;
             b = tmp;
         }

@@ -6,20 +6,15 @@ public class Fraction {
     public Fraction(long n, long d) {
         if (d == 0) System.exit(1);
         if (d < 0) { n = -n; d = -d; }
+        long nejvyssi = NumericUtils.gcd(Math.abs(n), d);
 
-        long a = Math.abs(n), b = d;
-        while (b != 0) {
-            long t = b;
-            b = a % b;
-            a = t;
-        }
-
-        this.n = n / a;
-        this.d = d / a;
+        this.n = n / nejvyssi;
+        this.d = d / nejvyssi;
     }
 
     public Fraction add(Fraction o) {
         return new Fraction(this.n * o.d + o.n * this.d, this.d * o.d);
+
     }
 
     public static Fraction parseExpression(String s) {
@@ -34,11 +29,14 @@ public class Fraction {
                 res = res.add(new Fraction(Long.parseLong(t), 1));
             }
         }
+        System.out.println("expression" + res);
         return res;
     }
 
     @Override
     public String toString() {
+        System.out.println("zlomek to string: " + n + "/" + d);
         return d == 1 ? "" + n : n + "/" + d;
+
     }
 }
