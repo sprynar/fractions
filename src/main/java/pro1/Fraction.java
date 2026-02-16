@@ -41,8 +41,4 @@ public class Fraction {
     public String toString() {
         return d == 1 ? "" + n : n + "/" + d;
     }
-
-    public String vratZlomek() {
-        return n + "/" + d;
-    }
 }
