@@ -23,7 +23,7 @@ public class Main {
                             Files.lines(path).forEach(line -> {
                                 String[] parts = line.split("[,;\t=:]");
                                 System.out.println(parts[0]);
-                                System.out.print("; "+ parts[1] +";  ");
+                                System.out.print("; "+ parts[1] +"; ");
                             });
                         } catch (IOException e) {
                             e.printStackTrace();
