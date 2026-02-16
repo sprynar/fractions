@@ -5,6 +5,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
+import static pro1.NumericUtils.gcd;
+
 public class Main {
     public static void main(String[] args){
         System.out.println("ahoj krásný světe");
@@ -17,8 +19,7 @@ public class Main {
                             Files.lines(path).forEach(line -> {
                                 String[] parts = line.split("[,;\t=:]");
                                 System.out.print(parts[0].trim());
-                                System.out.println(","+ parts[1].trim());
-
+                                System.out.println(", "+ parts[1].trim());
                             });
                         } catch (IOException e) {
                             System.exit(1);
